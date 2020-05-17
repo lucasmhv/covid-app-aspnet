@@ -1,0 +1,44 @@
+﻿@model IEnumerable<AppCovid.Models.Covid>
+
+@{
+    ViewData["Title"] = "O Covid-19 pelo mundo!";
+}
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Death)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Recovered)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Confirmed)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Country)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Death)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Recovered)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Confirmed)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Country.Nome)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
